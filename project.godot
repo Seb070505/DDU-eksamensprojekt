@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="DDU eksamensprojekt"
-run/main_scene="res://MainGame.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scenes/MainGame.tscn"
+config/icon="res://Assets/icon.png"
 
 [gui]
 
