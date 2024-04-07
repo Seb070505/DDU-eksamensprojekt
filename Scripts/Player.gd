@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 var speed = 150
 
+var score = 0
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO * delta
@@ -26,3 +27,7 @@ func _physics_process(delta):
 
 func player():
 	pass
+
+
+func collected_music(value):
+	score += value
