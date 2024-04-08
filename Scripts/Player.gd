@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var speed = 150
+var speed = 400
 
 var score = 0
 
