@@ -5,6 +5,7 @@ var speed = 400
 
 var score = 0
 
+
 func _physics_process(delta):
 	var velocity = Vector2.ZERO * delta
 	
@@ -23,6 +24,16 @@ func _physics_process(delta):
 	
 	velocity = velocity.normalized()
 	move_and_slide(velocity * speed)
+	
+	if Global.interact == true:
+		$Interact/Label.visible = true
+	else:
+		$Interact/Label.visible = false
+	
+	if Global.pickUp == true:
+		$Interact/Label2.visible = true
+	else:
+		$Interact/Label2.visible = false
 
 
 func player():
