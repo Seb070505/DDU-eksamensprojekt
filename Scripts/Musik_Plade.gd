@@ -9,6 +9,7 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	if body.has_method("player"):
 		body.collected_music(value)
+		Global.musikplade += 1
 		$self_queue.start()
 
 
