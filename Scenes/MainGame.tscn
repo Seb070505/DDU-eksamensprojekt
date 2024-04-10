@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Bus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modern_Exteriors_Complete_Tileset.png" type="Texture" id=3]
 [ext_resource path="res://Interiors_free_16x16.png" type="Texture" id=4]
 [ext_resource path="res://Room_Builder_free_16x16.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Musik_Plade.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Modern_Exteriors_Complete_Tileset.png 0"
@@ -3286,3 +3287,6 @@ position = Vector2( 1400, 485 )
 scale = Vector2( 2, 2 )
 firstmoveDist = 2725
 secondmoveDist = -400
+
+[node name="Musik_Plade" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1380, 406 )
