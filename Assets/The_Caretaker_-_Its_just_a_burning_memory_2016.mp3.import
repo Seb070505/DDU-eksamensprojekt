@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The_Caretaker_-_Its_just_a_burning_memory_2016.mp3-9a7b8e11c9c3404692fdba19a4123396.mp3str"
+
+[deps]
+
+source_file="res://Assets/The_Caretaker_-_Its_just_a_burning_memory_2016.mp3"
+dest_files=[ "res://.import/The_Caretaker_-_Its_just_a_burning_memory_2016.mp3-9a7b8e11c9c3404692fdba19a4123396.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
