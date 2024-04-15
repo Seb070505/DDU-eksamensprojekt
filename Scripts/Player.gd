@@ -25,12 +25,19 @@ func _physics_process(delta):
 	velocity = velocity.normalized()
 	move_and_slide(velocity * speed)
 	
-	if Global.interact == true:
+	
+	if Input.is_action_pressed("Interact") and Global.interactZone == true:
+		Global.interact = true
+	
+	if Global.interactZone == true:
 		$Interact/Label.visible = true
 	else:
 		$Interact/Label.visible = false
 	
-	if Global.pickUp == true:
+	if Input.is_action_pressed("pickUp") and Global.pickUpZone == true:
+		Global.pickUp = true
+	
+	if Global.pickUpZone == true:
 		$Interact/Label2.visible = true
 	else:
 		$Interact/Label2.visible = false

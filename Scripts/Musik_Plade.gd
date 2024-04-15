@@ -2,18 +2,27 @@ extends Node2D
 
 export var value = 1
 
+
+func _ready():
+	print(Global.pickUp)
+	print(Global.musikplade)
+
 func _physics_process(delta):
-	pass
+	if Global.pickUp == true:
+		Global.musikplade += 1
+		if Global.musikplade >= 1:
+			Global.musikplade = 1
+		print(Global.musikplade)
+	if Global.pickUp == true and Global.musikplade == 1:
+		queue_free()
 
 
 func _on_Area2D_body_entered(body):
 	if body.has_method("player"):
+		Global.pickUpZone = true
 		body.collected_music(value)
-		Global.musikplade += 1
-		$self_queue.start()
 
 
-
-
-func _on_self_queue_timeout():
-	queue_free()
+func _on_Area2D_body_exited(body):
+	Global.pickUp = false
+	Global.pickUpZone = false

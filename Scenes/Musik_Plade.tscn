@@ -14,11 +14,9 @@ script = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[node name="self_queue" type="Timer" parent="."]
-
 [node name="Vinyl" type="Sprite" parent="."]
 position = Vector2( 0, -1 )
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="timeout" from="self_queue" to="." method="_on_self_queue_timeout"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
