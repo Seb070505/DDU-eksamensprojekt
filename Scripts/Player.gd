@@ -29,7 +29,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Interact") and Global.interactZone == true:
 		Global.interact = true
 	
-	if Global.interactZone == true:
+	if Global.interactZone == true and Global.interact == false:
 		$Interact/Label.visible = true
 	else:
 		$Interact/Label.visible = false
@@ -37,7 +37,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("pickUp") and Global.pickUpZone == true:
 		Global.pickUp = true
 	
-	if Global.pickUpZone == true:
+	if Global.pickUpZone == true and Global.pickUp == false:
 		$Interact/Label2.visible = true
 	else:
 		$Interact/Label2.visible = false
