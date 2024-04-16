@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var animation = $AnimationPlayer
+
 var snakkeMedDatter =  false
 
 func _physics_process(delta):
@@ -7,13 +9,14 @@ func _physics_process(delta):
 		$Panel.visible = true
 		$Label.visible = true
 		Global.mulighedForAtTageBussen = true
+		animation.play("Daughter idle")
 	else:
 		$Panel.visible = false
 		$Label.visible = false
 
 
 func _on_InteractionZone_Daughter_body_entered(body):
-	if body.has_method("player"):
+	if body.has_method("player") and Global.interactMedDatterMulig == true:
 		Global.interactZone = true
 		snakkeMedDatter = true
 
