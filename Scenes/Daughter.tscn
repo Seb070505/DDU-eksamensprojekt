@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Daughter.gd" type="Script" id=1]
-[ext_resource path="res://WitsEnd.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Datter.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.1123
@@ -15,6 +15,110 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id=4]
+resource_name = "Daughter idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Datter:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Datter:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 56 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Datter:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 19 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Datter:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 74, 75, 76, 77, 78, 79 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Datter:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Datter:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 56 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Datter:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Datter:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 74 ]
+}
 
 [node name="Daughter_1" type="KinematicBody2D"]
 position = Vector2( 527, 328 )
@@ -50,9 +154,16 @@ hellere skynde dig. Kan du også hente noget mælk
 med hjem fra supermarkedet?"
 align = 1
 
-[node name="WitsEnd" type="Sprite" parent="."]
-scale = Vector2( 0.167969, 0.367187 )
+[node name="Datter" type="Sprite" parent="."]
+position = Vector2( 0, -3 )
 texture = ExtResource( 2 )
+hframes = 56
+vframes = 19
+frame = 74
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Daughter idle" = SubResource( 4 )
+anims/RESET = SubResource( 5 )
 
 [connection signal="body_entered" from="InteractionZone_Daughter" to="." method="_on_InteractionZone_Daughter_body_entered"]
 [connection signal="body_exited" from="InteractionZone_Daughter" to="." method="_on_InteractionZone_Daughter_body_exited"]
