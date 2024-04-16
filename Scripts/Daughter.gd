@@ -6,6 +6,7 @@ func _physics_process(delta):
 	if Global.interact == true and Global.interactMedDatterMulig == true and snakkeMedDatter == true:
 		$Panel.visible = true
 		$Label.visible = true
+		Global.mulighedForAtTageBussen = true
 	else:
 		$Panel.visible = false
 		$Label.visible = false

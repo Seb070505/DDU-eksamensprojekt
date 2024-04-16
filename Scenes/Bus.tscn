@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Buses_2.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 13.9998
-height = 26.0003
+radius = 30.9999
+height = 54.0005
 
 [sub_resource type="Animation" id=4]
 resource_name = "Bus left"
@@ -310,7 +310,6 @@ vframes = 11
 frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -11 )
 rotation = 1.5708
 shape = SubResource( 1 )
@@ -323,4 +322,6 @@ anims/RESET = SubResource( 3 )
 [node name="animationsTimer" type="Timer" parent="."]
 wait_time = 0.6
 
+[connection signal="body_entered" from="." to="." method="_on_Bus_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Bus_body_exited"]
 [connection signal="timeout" from="animationsTimer" to="." method="_on_animationsTimer_timeout"]
