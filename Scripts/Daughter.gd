@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-
+var snakkeMedDatter =  false
 
 func _physics_process(delta):
-	if Global.interact == true and Global.interactMedDatterMulig == true:
+	if Global.interact == true and Global.interactMedDatterMulig == true and snakkeMedDatter == true:
 		$Panel.visible = true
 		$Label.visible = true
 	else:
@@ -14,8 +14,10 @@ func _physics_process(delta):
 func _on_InteractionZone_Daughter_body_entered(body):
 	if body.has_method("player"):
 		Global.interactZone = true
+		snakkeMedDatter = true
 
 
 func _on_InteractionZone_Daughter_body_exited(body):
 	Global.interactZone = false
 	Global.interact = false
+	snakkeMedDatter = false

@@ -59,7 +59,7 @@ func move_to_2(current, to, step):
 func animationerne():
 	if argh == false and hehe == true:
 		animation.play("Bus left")
-	elif argh == true and hehe == true:
+	elif argh == true and hehe == true and position.y >= 375:
 		animation.play("Bus turn")
 		$animationsTimer.start()
 
