@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 32.1403
+[sub_resource type="CapsuleShape2D" id=17]
+height = 8.0
 
 [sub_resource type="DynamicFont" id=2]
 outline_size = 1
@@ -705,7 +705,8 @@ position = Vector2( 512, 301 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+position = Vector2( 0, 1 )
+shape = SubResource( 17 )
 
 [node name="SpriteSheet" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -713,7 +714,7 @@ hframes = 16
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.1, 0.1 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.05
@@ -753,3 +754,8 @@ anims/RESET = SubResource( 4 )
 "anims/walk front" = SubResource( 9 )
 "anims/walk left" = SubResource( 12 )
 "anims/walk right" = SubResource( 13 )
+
+[node name="pickUp_ip" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="timeout" from="pickUp_ip" to="." method="_on_pickUp_ip_timeout"]

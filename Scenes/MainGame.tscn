@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Musik_Plade.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Musik_Plade_Afspiller.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Daughter.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/MainGame.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/MainGame.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Modern_Exteriors_Complete_Tileset.png 0"

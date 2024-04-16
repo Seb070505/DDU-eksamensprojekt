@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 onready var animation = $AnimationPlayer
 
@@ -18,11 +18,11 @@ func _physics_process(delta):
 		animation.play("musik_idle")
 	
 
-func _on_Musik_Plade_Afspiller_body_entered(body):
+func _on_Musikplade_Area2D_body_entered(body):
 	if body.has_method("player"):
 		Global.interactZone = true
 
 
-func _on_Musik_Plade_Afspiller_body_exited(body):
+func _on_Musikplade_Area2D_body_exited(body):
 	Global.interact = false
 	Global.interactZone = false
