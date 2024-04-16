@@ -7,11 +7,21 @@ var score = 0
 var pickUp_ip = false
 var idle = true
 
+func _ready():
+	$Interact/Panel.visible = false
+	$Interact/Objective.visible = false
+	$Interact/Musikplade.visible = false
+	$Interact/MusikAfspiller.visible = false
+	$Interact/SnakMedDatter.visible = false
+	$Interact/TagBussen.visible = false
+
+
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO * delta
 	
 	interact_and_pickUp()
+	objective()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -48,8 +58,10 @@ func interact_and_pickUp():
 	
 	if Global.interactZone == true and Global.interact == false:
 		$Interact/Label.visible = true
+		$Interact/InteractPanel.visible = true
 	else:
 		$Interact/Label.visible = false
+		$Interact/InteractPanel.visible = false
 	
 	if Input.is_action_pressed("pickUp") and Global.pickUpZone == true:
 		Global.pickUp = true
@@ -69,8 +81,10 @@ func interact_and_pickUp():
 	
 	if Global.pickUpZone == true and Global.pickUp == false:
 		$Interact/Label2.visible = true
+		$Interact/PickUpPanel.visible = true
 	else:
 		$Interact/Label2.visible = false
+		$Interact/PickUpPanel.visible = false
 
 
 func idle_animation():
@@ -94,3 +108,24 @@ func collected_music(value):
 
 func _on_pickUp_ip_timeout():
 	pickUp_ip = false
+
+
+func objective():
+	if Global.objektiv_musikplade == true:
+		$Interact/Panel.visible = true
+		$Interact/Objective.visible = true
+		$Interact/Musikplade.visible = true
+	
+	if Global.objektiv_pladeAfspiller == true:
+		$Interact/Musikplade.visible = false
+		$Interact/MusikAfspiller.visible = true
+	
+	if Global.objektiv_datter == true:
+		$Interact/MusikAfspiller.visible = false
+		$Interact/SnakMedDatter.visible = true
+	
+	if Global.objektiv_tagBussen == true:
+		$Interact/SnakMedDatter.visible = false
+		$Interact/TagBussen.visible = true
+
+

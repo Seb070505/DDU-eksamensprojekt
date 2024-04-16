@@ -10,6 +10,7 @@ func _physics_process(delta):
 		Global.musikplade -= 1
 		Global.interactMedDatterMulig = true
 		musikPlaying = true
+		Global.objektiv_datter = true
 		print("musik")
 
 	if musikPlaying == true:
