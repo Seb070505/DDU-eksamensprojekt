@@ -3881,12 +3881,9 @@ firstmoveDist = 2725
 secondmoveDist = -400
 
 [node name="Daughter_1" parent="." instance=ExtResource( 8 )]
-scale = Vector2( 3, 3 )
 
 [node name="Musik_Plade" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1075, 365 )
-scale = Vector2( 2, 2 )
 
 [node name="Musik_Plade_Afspiller" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1071, 483 )
-scale = Vector2( 2, 2 )
