@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Modern_Exteriors_Complete_Tileset.png" type="Texture" id=1]
 [ext_resource path="res://køkken rigtige.png" type="Texture" id=2]
@@ -4776,6 +4776,9 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=105]
 extents = Vector2( 16, 3 )
 
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 16, 10 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -4842,4 +4845,11 @@ position = Vector2( -1528, 2983 )
 position = Vector2( -1712, 3171 )
 shape = SubResource( 105 )
 
+[node name="First_Objective" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="First_Objective"]
+position = Vector2( -1824, 3002 )
+shape = SubResource( 116 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="First_Objective" to="." method="_on_First_Objective_body_entered"]

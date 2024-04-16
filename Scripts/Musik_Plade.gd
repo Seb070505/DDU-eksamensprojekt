@@ -7,6 +7,7 @@ func _physics_process(delta):
 		Global.musikplade += 1
 		if Global.musikplade >= 1:
 			Global.musikplade = 1
+			Global.objektiv_pladeAfspiller = true
 	if Global.pickUp == true and Global.musikplade == 1:
 		queue_free()
 
