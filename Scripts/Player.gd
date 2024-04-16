@@ -14,6 +14,7 @@ func _ready():
 	$Interact/MusikAfspiller.visible = false
 	$Interact/SnakMedDatter.visible = false
 	$Interact/TagBussen.visible = false
+	$Camera2D.current = true
 
 
 

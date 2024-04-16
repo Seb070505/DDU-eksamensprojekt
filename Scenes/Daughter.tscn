@@ -11,6 +11,11 @@ height = 6.0
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -141,11 +146,11 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_styles/panel = SubResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -81.0
-margin_top = -68.0
-margin_right = 249.0
-margin_bottom = -3.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -73.0
+margin_top = -67.0
+margin_right = 257.0
+margin_bottom = -2.0
+rect_scale = Vector2( 0.45, 0.45 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Far!! Hvad laver du stadig her?

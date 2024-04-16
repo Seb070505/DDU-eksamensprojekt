@@ -5,7 +5,7 @@ onready var animation = $AnimationPlayer
 var musikPlaying = false
 
 func _physics_process(delta):
-	if Global.interact == true:
+	if Global.interact == true and musikPlaying == false:
 		$AudioStreamPlayer.play()
 		Global.musikplade -= 1
 		Global.interactMedDatterMulig = true
