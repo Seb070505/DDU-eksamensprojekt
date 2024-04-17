@@ -1,4 +1,4 @@
-[gd_scene load_steps=297 format=2]
+[gd_scene load_steps=298 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Bus.tscn" type="PackedScene" id=2]
@@ -7102,6 +7102,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 0, 48 )
 } ]
 11/z_index = 0
 
+[sub_resource type="CapsuleShape2D" id=290]
+
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -7153,3 +7155,12 @@ secondmoveDist = -400
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+
+[node name="Hospital_indgang" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hospital_indgang"]
+position = Vector2( 4128, -55 )
+rotation = 1.5708
+shape = SubResource( 290 )
+
+[connection signal="body_entered" from="Hospital_indgang" to="." method="_on_Hospital_indgang_body_entered"]
