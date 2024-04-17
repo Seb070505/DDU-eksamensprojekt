@@ -837,7 +837,6 @@ text = "Objective"
 align = 1
 
 [node name="Musikplade" type="Label" parent="Interact"]
-visible = false
 margin_left = 812.0
 margin_top = 43.0
 margin_right = 983.0
@@ -848,7 +847,6 @@ text = "Find en musikplade"
 align = 1
 
 [node name="MusikAfspiller" type="Label" parent="Interact"]
-visible = false
 margin_left = 854.0
 margin_top = 38.0
 margin_right = 1024.0
@@ -859,7 +857,6 @@ på en pladeafspiller"
 align = 1
 
 [node name="SnakMedDatter" type="Label" parent="Interact"]
-visible = false
 margin_left = 844.0
 margin_top = 43.0
 margin_right = 1034.0
@@ -869,7 +866,6 @@ text = "Snak med datteren i køkkenet"
 align = 1
 
 [node name="TagBussen" type="Label" parent="Interact"]
-visible = false
 margin_left = 847.0
 margin_top = 37.0
 margin_right = 1029.0
