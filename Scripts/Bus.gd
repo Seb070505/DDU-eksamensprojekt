@@ -27,6 +27,10 @@ func _physics_process(delta):
 		if position.x == firsttargetX:
 			argh = true
 			position.y = move_to_2(position.y, secondtargetY, speed * delta)
+		if position.y == secondtargetY:
+			Global.busTurOver = true
+			Global.interactZone = false
+	
 	
 
 
@@ -70,6 +74,7 @@ func entered_Bus():
 	if Global.interact == true and Global.mulighedForAtTageBussen == true and indenforBusStopsted == true:
 		$Camera2D.current = true
 		busTurStart = true
+		Global.iGangMedAtTageBussen = true
 
 
 

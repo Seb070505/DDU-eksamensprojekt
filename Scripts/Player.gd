@@ -8,8 +8,10 @@ var pickUp_ip = false
 var idle = true
 var timer = false
 var direction = Vector2.ZERO
+var HospitalBus = Vector2(4050,50)
 
 func _ready():
+	$SpriteSheet.visible = true
 	$Interact/Panel.visible = false
 	$Interact/Objective.visible = false
 	$Interact/Musikplade.visible = false
@@ -25,6 +27,7 @@ func _physics_process(delta):
 	
 	interact_and_pickUp()
 	objective()
+	BusTur()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -140,5 +143,16 @@ func objective():
 	if Global.objektiv_tagBussen == true:
 		$Interact/SnakMedDatter.visible = false
 		$Interact/TagBussen.visible = true
+	
+	if Global.objektiv_gaaIndPaaHospitalet == true:
+		$Interact/TagBussen.visible = false
+		#$Interact/gaaIndPaaHospitalet.visible = true
 
-
+func BusTur():
+	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false:
+		position = HospitalBus
+		$SpriteSheet.visible = true
+		Global.objektiv_gaaIndPaaHospitalet = true
+		$Camera2D.current = true
+	elif Global.busTurOver == false and Global.objektiv_gaaIndPaaHospitalet == false and Global.iGangMedAtTageBussen == true:
+		$SpriteSheet.visible = false
