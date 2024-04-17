@@ -320,7 +320,7 @@ shape = SubResource( 1 )
 anims/RESET = SubResource( 3 )
 
 [node name="animationsTimer" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_Bus_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Bus_body_exited"]

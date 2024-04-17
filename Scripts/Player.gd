@@ -6,6 +6,8 @@ var speed = 50
 var score = 0
 var pickUp_ip = false
 var idle = true
+var timer = false
+var direction = Vector2.ZERO
 
 func _ready():
 	$Interact/Panel.visible = false
@@ -26,21 +28,29 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
+		direction.y = -1
+		direction.x = 0
 		idle = false
 		animation.play("walk back")
 	
 	elif Input.is_action_pressed("move_down") and pickUp_ip == false:
 		velocity.y += 1
+		direction.y = 1
+		direction.x = 0
 		idle = false
 		animation.play("walk front")
 	
 	elif Input.is_action_pressed("move_left") and pickUp_ip == false:
 		velocity.x -= 1
+		direction.x = -1
+		direction.y = 0
 		idle = false
 		animation.play("walk left")
 	
 	elif Input.is_action_pressed("move_right") and pickUp_ip == false:
 		velocity.x += 1
+		direction.x = 1
+		direction.y = 0
 		idle = false
 		animation.play("walk right")
 	
@@ -67,17 +77,19 @@ func interact_and_pickUp():
 	if Input.is_action_pressed("pickUp") and Global.pickUpZone == true:
 		Global.pickUp = true
 		pickUp_ip = true
+		timer = true
 		print(pickUp_ip)
-		if Input.is_action_just_released("move_down"):
+		if direction.y == 1 and Input.is_action_pressed("pickUp"):
 			animation.play("pick up front")
-		elif Input.is_action_just_released("move_up"):
+		elif direction.y == -1 and Input.is_action_pressed("pickUp"):
 			animation.play("pick up back")
-		elif Input.is_action_just_released("move_left"):
+		elif direction.x == -1 and Input.is_action_pressed("pickUp"):
 			animation.play("pick up left")
-		elif Input.is_action_just_released("move_right"):
+		elif direction.x == 1 and Input.is_action_pressed("pickUp"):
 			animation.play("pick up right")
 		
-		if pickUp_ip == true:
+		if pickUp_ip == true and timer == true:
+			timer = false
 			$pickUp_ip.start()
 	
 	if Global.pickUpZone == true and Global.pickUp == false:
@@ -90,13 +102,13 @@ func interact_and_pickUp():
 
 func idle_animation():
 	if idle == true:
-		if Input.is_action_just_released("move_down"):
+		if direction.y == 1:
 			animation.play("idle front")
-		elif Input.is_action_just_released("move_up"):
+		elif direction.y == -1:
 			animation.play("idle back")
-		elif Input.is_action_just_released("move_left"):
+		elif direction.x == -1:
 			animation.play("idle left")
-		elif Input.is_action_just_released("move_right"):
+		elif direction.x == 1:
 			animation.play("idle right")
 
 func player():
