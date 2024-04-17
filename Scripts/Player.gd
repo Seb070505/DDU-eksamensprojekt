@@ -18,6 +18,7 @@ func _ready():
 	$Interact/MusikAfspiller.visible = false
 	$Interact/SnakMedDatter.visible = false
 	$Interact/TagBussen.visible = false
+	$Interact/gaaIndPaaHospitalet.visible = false
 	$Camera2D.current = true
 
 
@@ -146,7 +147,7 @@ func objective():
 	
 	if Global.objektiv_gaaIndPaaHospitalet == true:
 		$Interact/TagBussen.visible = false
-		#$Interact/gaaIndPaaHospitalet.visible = true
+		$Interact/gaaIndPaaHospitalet.visible = true
 
 func BusTur():
 	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false:
