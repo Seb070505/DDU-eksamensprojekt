@@ -9,6 +9,7 @@ var idle = true
 var timer = false
 var direction = Vector2.ZERO
 var HospitalBus = Vector2(4050,50)
+var Elevator1 = Vector2(1327.5, 1190)
 
 func _ready():
 	$SpriteSheet.visible = true
@@ -19,6 +20,8 @@ func _ready():
 	$Interact/SnakMedDatter.visible = false
 	$Interact/TagBussen.visible = false
 	$Interact/gaaIndPaaHospitalet.visible = false
+	$Interact/snakMedReceptionisten.visible = false
+	$Interact/tagElevatoren.visible = false
 	$Camera2D.current = true
 
 
@@ -29,6 +32,7 @@ func _physics_process(delta):
 	interact_and_pickUp()
 	objective()
 	BusTur()
+	Hospital_Elevator()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -148,6 +152,14 @@ func objective():
 	if Global.objektiv_gaaIndPaaHospitalet == true:
 		$Interact/TagBussen.visible = false
 		$Interact/gaaIndPaaHospitalet.visible = true
+	
+	if Global.objektiv_snakMedReceptionisten == true:
+		$Interact/gaaIndPaaHospitalet.visible = false
+		$Interact/snakMedReceptionisten.visible = true
+	
+	if Global.objektiv_tagElevatoren == true:
+		$Interact/snakMedReceptionisten.visible = false
+		$Interact/tagElevatoren.visible = true
 
 func BusTur():
 	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false:
@@ -157,3 +169,8 @@ func BusTur():
 		$Camera2D.current = true
 	elif Global.busTurOver == false and Global.objektiv_gaaIndPaaHospitalet == false and Global.iGangMedAtTageBussen == true:
 		$SpriteSheet.visible = false
+
+func Hospital_Elevator():
+	if Global.DokterEtage == true and Global.objektiv_tagElevatoren == true:
+		position = Elevator1
+		Global.objektiv_tagElevatoren = false
