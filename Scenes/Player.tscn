@@ -911,6 +911,15 @@ custom_fonts/font = SubResource( 25 )
 text = "Snak med lægen"
 align = 1
 
+[node name="TagDinMedicin" type="Label" parent="Interact"]
+margin_left = 877.0
+margin_top = 46.0
+margin_right = 1005.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 25 )
+text = "Tag din medicin"
+align = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
 "anims/idle back" = SubResource( 6 )

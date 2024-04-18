@@ -10,6 +10,8 @@ var timer = false
 var direction = Vector2.ZERO
 var HospitalBus = Vector2(4050,50)
 var Elevator1 = Vector2(1327.5, 1190)
+var exitedHospital = Vector2(4075,0)
+var positionEfterHospital = true
 
 func _ready():
 	$SpriteSheet.visible = true
@@ -23,6 +25,7 @@ func _ready():
 	$Interact/snakMedReceptionisten.visible = false
 	$Interact/tagElevatoren.visible = false
 	$Interact/snakMedDoktor.visible = false
+	$Interact/TagDinMedicin.visible = false
 	$Camera2D.current = true
 
 
@@ -67,6 +70,9 @@ func _physics_process(delta):
 		idle = true
 		idle_animation()
 	
+	if Global.medicinTaget == true and positionEfterHospital == true and Global.tilbageUdenforHospital ==  true:
+		position = exitedHospital
+		positionEfterHospital = false
 	
 	velocity = velocity.normalized()
 	move_and_slide(velocity * speed)
@@ -165,6 +171,10 @@ func objective():
 	if Global.objektiv_snakMedDoktor == true:
 		$Interact/tagElevatoren.visible = false
 		$Interact/snakMedDoktor.visible = true
+	
+	if Global.objektiv_tagDinMedicin == true:
+		$Interact/snakMedDoktor.visible = false
+		$Interact/TagDinMedicin.visible = true
 
 func BusTur():
 	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false:
