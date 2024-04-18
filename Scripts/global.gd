@@ -14,6 +14,7 @@ var mulighedForAtTageElevatoren = false
 var DokterEtage = false
 var medicinSynelig = false
 var medicinTaget = false
+var tilbageUdenforHospital = false
 
 var objektiv_musikplade = false
 var objektiv_pladeAfspiller = false
