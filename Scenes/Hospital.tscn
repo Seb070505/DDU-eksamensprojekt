@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Room_Builder_free_16x16.png" type="Texture" id=1]
 [ext_resource path="res://house.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Receptionist.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Hospital.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Doktor.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -960,6 +961,9 @@ position = Vector2( 843, 478 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator"]
 position = Vector2( 1328, -12 )
 shape = SubResource( 4 )
+
+[node name="Doktor" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1420, 1389 )
 
 [connection signal="body_entered" from="Elevator" to="." method="_on_Elevator_body_entered"]
 [connection signal="body_exited" from="Elevator" to="." method="_on_Elevator_body_exited"]

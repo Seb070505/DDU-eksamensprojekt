@@ -22,6 +22,7 @@ func _ready():
 	$Interact/gaaIndPaaHospitalet.visible = false
 	$Interact/snakMedReceptionisten.visible = false
 	$Interact/tagElevatoren.visible = false
+	$Interact/snakMedDoktor.visible = false
 	$Camera2D.current = true
 
 
@@ -160,6 +161,10 @@ func objective():
 	if Global.objektiv_tagElevatoren == true:
 		$Interact/snakMedReceptionisten.visible = false
 		$Interact/tagElevatoren.visible = true
+	
+	if Global.objektiv_snakMedDoktor == true:
+		$Interact/tagElevatoren.visible = false
+		$Interact/snakMedDoktor.visible = true
 
 func BusTur():
 	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false:
@@ -171,6 +176,6 @@ func BusTur():
 		$SpriteSheet.visible = false
 
 func Hospital_Elevator():
-	if Global.DokterEtage == true and Global.objektiv_tagElevatoren == true:
+	if Global.DokterEtage == true:
 		position = Elevator1
-		Global.objektiv_tagElevatoren = false
+		Global.DokterEtage = false

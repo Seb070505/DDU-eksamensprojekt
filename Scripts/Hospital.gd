@@ -6,6 +6,7 @@ var interactMedElevator1 = false
 func _physics_process(delta):
 	if Global.interact == true and interactMedElevator1 == true:
 		Global.DokterEtage = true
+		Global.objektiv_snakMedDoktor = true
 
 
 func _on_Elevator_body_entered(body):
