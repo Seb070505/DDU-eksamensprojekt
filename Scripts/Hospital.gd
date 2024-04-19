@@ -10,8 +10,9 @@ func _physics_process(delta):
 		Global.objektiv_snakMedDoktor = true
 	
 	if Global.interact == true and interactMedElevator2 == true:
-		get_tree().change_scene("res://Scenes/MainGame.tscn")
 		Global.tilbageUdenforHospital = true
+		Global.objektiv_besoegSlagteren = true
+		get_tree().change_scene("res://Scenes/MainGame.tscn")
 
 
 func _on_Elevator_body_entered(body):

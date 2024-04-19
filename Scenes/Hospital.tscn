@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Room_Builder_free_16x16.png" type="Texture" id=1]
 [ext_resource path="res://house.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/Hospital.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Doktor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Medicin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Heartaches.mp3" type="AudioStream" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -978,6 +979,10 @@ position = Vector2( 1420, 1389 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator2"]
 position = Vector2( 1328, 1172 )
 shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 
 [connection signal="body_entered" from="Elevator" to="." method="_on_Elevator_body_entered"]
 [connection signal="body_exited" from="Elevator" to="." method="_on_Elevator_body_exited"]

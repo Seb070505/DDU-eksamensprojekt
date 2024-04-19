@@ -1,10 +1,12 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Pills.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Vinyl.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Chimken.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Dollar.png" type="Texture" id=7]
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 5.0
@@ -1005,7 +1007,7 @@ margin_bottom = 230.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Pills" type="Sprite" parent="Interact"]
-position = Vector2( 50, 129 )
+position = Vector2( 150, 129 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
@@ -1013,6 +1015,16 @@ texture = ExtResource( 4 )
 position = Vector2( 50, 131 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
+
+[node name="Chimken" type="Sprite" parent="Interact"]
+position = Vector2( 50, 129 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Dollar" type="Sprite" parent="Interact"]
+position = Vector2( 50, 129 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
