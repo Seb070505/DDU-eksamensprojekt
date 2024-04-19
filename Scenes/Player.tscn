@@ -1,8 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Pills.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Vinyl.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 5.0
@@ -76,6 +78,29 @@ size = 9
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0, 0, 0, 0.796078 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 1, 0.972549, 0.972549, 0.203922 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -919,6 +944,75 @@ margin_bottom = 60.0
 custom_fonts/font = SubResource( 25 )
 text = "Tag din medicin"
 align = 1
+
+[node name="Inventory" type="Panel" parent="Interact"]
+margin_top = 56.0
+margin_right = 300.0
+margin_bottom = 257.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="InventoryText" type="Label" parent="Interact"]
+margin_left = 84.0
+margin_top = 62.0
+margin_right = 172.0
+margin_bottom = 81.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 1, 0.796078, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "Inventory"
+align = 1
+
+[node name="Panel2" type="Panel" parent="Interact"]
+margin_left = 25.0
+margin_top = 105.0
+margin_right = 75.0
+margin_bottom = 155.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Panel3" type="Panel" parent="Interact"]
+margin_left = 125.0
+margin_top = 105.0
+margin_right = 175.0
+margin_bottom = 155.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Panel4" type="Panel" parent="Interact"]
+margin_left = 225.0
+margin_top = 105.0
+margin_right = 275.0
+margin_bottom = 155.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Panel5" type="Panel" parent="Interact"]
+margin_left = 25.0
+margin_top = 180.0
+margin_right = 75.0
+margin_bottom = 230.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Panel6" type="Panel" parent="Interact"]
+margin_left = 125.0
+margin_top = 180.0
+margin_right = 175.0
+margin_bottom = 230.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Panel7" type="Panel" parent="Interact"]
+margin_left = 225.0
+margin_top = 180.0
+margin_right = 275.0
+margin_bottom = 230.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Pills" type="Sprite" parent="Interact"]
+position = Vector2( 50, 129 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="Vinyl" type="Sprite" parent="Interact"]
+position = Vector2( 50, 131 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )

@@ -37,6 +37,7 @@ func _physics_process(delta):
 	objective()
 	BusTur()
 	Hospital_Elevator()
+	Inventory()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -189,3 +190,33 @@ func Hospital_Elevator():
 	if Global.DokterEtage == true:
 		position = Elevator1
 		Global.DokterEtage = false
+
+func Inventory():
+	if Input.is_action_pressed("Inventory"):
+		$Interact/Inventory.visible = true
+		$Interact/InventoryText.visible = true
+		$Interact/Panel2.visible = true
+		$Interact/Panel3.visible = true
+		$Interact/Panel4.visible = true
+		$Interact/Panel5.visible = true
+		$Interact/Panel6.visible = true
+		$Interact/Panel7.visible = true
+		if Global.musikplade == 1:
+			$Interact/Vinyl.visible = true
+		else:
+			$Interact/Vinyl.visible = false
+		if Global.medicinTaget == true:
+			$Interact/Pills.visible = true
+		else:
+			$Interact/Pills.visible = false
+	else:
+		$Interact/Inventory.visible = false
+		$Interact/InventoryText.visible = false
+		$Interact/Panel2.visible = false
+		$Interact/Panel3.visible = false
+		$Interact/Panel4.visible = false
+		$Interact/Panel5.visible = false
+		$Interact/Panel6.visible = false
+		$Interact/Panel7.visible = false
+		$Interact/Vinyl.visible = false
+		$Interact/Pills.visible = false
