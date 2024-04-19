@@ -12,6 +12,8 @@ var HospitalBus = Vector2(4050,50)
 var Elevator1 = Vector2(1327.5, 1190)
 var exitedHospital = Vector2(4075,0)
 var positionEfterHospital = true
+var positionHosSlagteren = false
+var fix = true
 
 func _ready():
 	$SpriteSheet.visible = true
@@ -33,11 +35,14 @@ func _ready():
 func _physics_process(delta):
 	var velocity = Vector2.ZERO * delta
 	
+	print(position)
+	
 	interact_and_pickUp()
 	objective()
 	BusTur()
 	Hospital_Elevator()
 	Inventory()
+	forkertSted()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -74,6 +79,11 @@ func _physics_process(delta):
 	if Global.medicinTaget == true and positionEfterHospital == true and Global.tilbageUdenforHospital ==  true:
 		position = exitedHospital
 		positionEfterHospital = false
+	
+	if fix == true:
+		if Global.objektiv_besoegSlagteren == true:
+			positionHosSlagteren = true
+		fix = false
 	
 	velocity = velocity.normalized()
 	move_and_slide(velocity * speed)
@@ -176,9 +186,16 @@ func objective():
 	if Global.objektiv_tagDinMedicin == true:
 		$Interact/snakMedDoktor.visible = false
 		$Interact/TagDinMedicin.visible = true
+	
+	
+	
+	
+	
+	
+
 
 func BusTur():
-	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false:
+	if Global.busTurOver == true and Global.objektiv_gaaIndPaaHospitalet == false and positionHosSlagteren == false:
 		position = HospitalBus
 		$SpriteSheet.visible = true
 		Global.objektiv_gaaIndPaaHospitalet = true
@@ -205,10 +222,21 @@ func Inventory():
 			$Interact/Vinyl.visible = true
 		else:
 			$Interact/Vinyl.visible = false
+		
+		if Global.penge == 50:
+			$Interact/Dollar.visible = true
+		else:
+			$Interact/Dollar.visible = false
+		
 		if Global.medicinTaget == true:
 			$Interact/Pills.visible = true
 		else:
 			$Interact/Pills.visible = false
+		
+		if Global.chicken == 1:
+			$Interact/Chimken.visible = true
+		else:
+			$Interact/Chimken.visible = false
 	else:
 		$Interact/Inventory.visible = false
 		$Interact/InventoryText.visible = false
@@ -220,3 +248,10 @@ func Inventory():
 		$Interact/Panel7.visible = false
 		$Interact/Vinyl.visible = false
 		$Interact/Pills.visible = false
+		$Interact/Dollar.visible = false
+		$Interact/Chimken.visible = false
+
+func forkertSted():
+	if Global.objektiv_snakMedSlagteren == true and positionHosSlagteren == true:
+		position = Vector2(125,150)
+		positionHosSlagteren = false

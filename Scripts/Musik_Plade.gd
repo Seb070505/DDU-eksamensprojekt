@@ -4,10 +4,8 @@ export var value = 1
 
 func _physics_process(delta):
 	if Global.pickUp == true:
-		Global.musikplade += 1
-		if Global.musikplade >= 1:
-			Global.musikplade = 1
-			Global.objektiv_pladeAfspiller = true
+		Global.musikplade == 1
+		Global.objektiv_pladeAfspiller = true
 	if Global.pickUp == true and Global.musikplade == 1:
 		queue_free()
 

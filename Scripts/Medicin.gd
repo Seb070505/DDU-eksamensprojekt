@@ -15,6 +15,7 @@ func _physics_process(delta):
 	
 	if Global.pickUp == true and Global.medicinSynelig == true:
 		Global.medicinTaget = true
+		Global.objektiv_tagElevatorenUdAfHospitalet = true
 	
 	if Global.medicinTaget == true:
 		queue_free()
