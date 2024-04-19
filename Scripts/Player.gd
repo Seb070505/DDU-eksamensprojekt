@@ -91,6 +91,8 @@ func _physics_process(delta):
 	if fix == true:
 		if Global.objektiv_besoegSlagteren == true:
 			positionHosSlagteren = true
+		if Global.objektiv_snakMedDatter == true:
+			positionHus2 = true
 		fix = false
 	
 	velocity = velocity.normalized()
@@ -287,6 +289,7 @@ func forkertSted():
 		positionHosSlagteren = false
 
 func Hus2():
-	if Global.chicken == 1 and positionHus2 == false:
+	if Global.objektiv_snakMedDatter == true and positionHus2 == true:
 		position = Vector2(-1712,3155)
-		positionHus2 = true
+		positionHus2 = false
+		print("Position er Hus2")

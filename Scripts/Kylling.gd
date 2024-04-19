@@ -15,6 +15,7 @@ func _physics_process(delta):
 		if Global.chicken >= 1:
 			Global.chicken = 1
 		Global.objektiv_forladButikken = true
+		Global.penge = 0
 		queue_free()
 
 
