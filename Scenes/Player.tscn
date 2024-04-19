@@ -947,6 +947,61 @@ custom_fonts/font = SubResource( 25 )
 text = "Tag din medicin"
 align = 1
 
+[node name="TagElevatorenUd" type="Label" parent="Interact"]
+margin_left = 877.0
+margin_top = 39.0
+margin_right = 1005.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 25 )
+text = "Tag Elevatoren ud af 
+hospitalet."
+align = 1
+
+[node name="BesoegSlagteren" type="Label" parent="Interact"]
+margin_left = 873.0
+margin_top = 46.0
+margin_right = 1006.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 25 )
+text = "Gå ind til slagteren i byen"
+align = 1
+
+[node name="SnakMedSlagteren" type="Label" parent="Interact"]
+margin_left = 877.0
+margin_top = 46.0
+margin_right = 1005.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 25 )
+text = "Snak med Slagteren"
+align = 1
+
+[node name="tagKylling" type="Label" parent="Interact"]
+margin_left = 877.0
+margin_top = 46.0
+margin_right = 1005.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 25 )
+text = "Tag kyllingekødet"
+align = 1
+
+[node name="forladSlagteren" type="Label" parent="Interact"]
+margin_left = 877.0
+margin_top = 46.0
+margin_right = 1005.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 25 )
+text = "Forlad Slagteren"
+align = 1
+
+[node name="snakMedDatter2" type="Label" parent="Interact"]
+margin_left = 877.0
+margin_top = 46.0
+margin_right = 1005.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 25 )
+text = "Snak med datteren"
+align = 1
+
 [node name="Inventory" type="Panel" parent="Interact"]
 margin_top = 56.0
 margin_right = 300.0

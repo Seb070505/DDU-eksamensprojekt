@@ -33,3 +33,4 @@ var objektiv_besoegSlagteren = false
 var objektiv_snakMedSlagteren = false
 var objektiv_tagKylling = false
 var objektiv_forladButikken = false
+var objektiv_snakMedDatter = false

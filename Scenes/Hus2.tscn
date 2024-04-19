@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Modern_Exteriors_Complete_Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Room_Builder_free_16x16.png" type="Texture" id=2]
@@ -6,9 +6,7 @@
 [ext_resource path="res://Interiors_free_16x16.png" type="Texture" id=4]
 [ext_resource path="res://house.png" type="Texture" id=5]
 [ext_resource path="res://Room_Builder_16x16.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Daughter.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Musik_Plade_Afspiller.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Musik_Plade.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/The_Caretaker_-_Its_just_a_burning_memory_2016.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
@@ -5108,14 +5106,9 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 11861906, 4, 0, 11927442, 4, 0, 11992978, 4, 0, 12058514, 4, 0, 12124050, 4, 0, 12189586, 4, 0, 12255122, 4, 0 )
 
-[node name="Daughter_1" parent="TileMap/TileMap" instance=ExtResource( 7 )]
-position = Vector2( -1590, 2913 )
-
-[node name="Musik_Plade_Afspiller" parent="TileMap/TileMap" instance=ExtResource( 8 )]
-position = Vector2( -1848, 2891 )
-
-[node name="Musik_Plade" parent="TileMap/TileMap" instance=ExtResource( 9 )]
-position = Vector2( -1528, 2983 )
-
 [node name="Player" parent="TileMap/TileMap" instance=ExtResource( 10 )]
-position = Vector2( -1846, 2924 )
+position = Vector2( -1712, 3149 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
