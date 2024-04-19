@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Modern_Exteriors_Complete_Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Room_Builder_free_16x16.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://house.png" type="Texture" id=5]
 [ext_resource path="res://Room_Builder_16x16.png" type="Texture" id=6]
 [ext_resource path="res://Assets/The_Caretaker_-_Its_just_a_burning_memory_2016.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Datter_2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
@@ -5105,6 +5106,9 @@ tile_set = SubResource( 124 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 11861906, 4, 0, 11927442, 4, 0, 11992978, 4, 0, 12058514, 4, 0, 12124050, 4, 0, 12189586, 4, 0, 12255122, 4, 0 )
+
+[node name="Datter_2" parent="TileMap/TileMap" instance=ExtResource( 8 )]
+position = Vector2( -1823, 2913 )
 
 [node name="Player" parent="TileMap/TileMap" instance=ExtResource( 10 )]
 position = Vector2( -1712, 3149 )

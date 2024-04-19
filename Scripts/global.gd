@@ -18,6 +18,7 @@ var medicinTaget = false
 var tilbageUdenforHospital = false
 var chickenSynelig = false
 var chicken = 0
+var snakketMedDatter = false
 
 var objektiv_musikplade = false
 var objektiv_pladeAfspiller = false

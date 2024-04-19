@@ -854,7 +854,7 @@ position = Vector2( 216, 53 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 119, 152 )
+position = Vector2( 119, 149 )
 shape = SubResource( 28 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

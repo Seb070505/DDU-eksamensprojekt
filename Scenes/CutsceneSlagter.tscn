@@ -29,4 +29,7 @@ wait_time = 10.0
 stream = ExtResource( 3 )
 autoplay = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

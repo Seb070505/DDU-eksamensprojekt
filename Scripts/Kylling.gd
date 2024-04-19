@@ -11,7 +11,10 @@ func _physics_process(delta):
 		$Chimken.visible = false
 	
 	if Global.pickUp == true and Global.chickenSynelig:
-		Global.chicken == 1
+		Global.chicken += 1
+		if Global.chicken >= 1:
+			Global.chicken = 1
+		Global.objektiv_forladButikken = true
 		queue_free()
 
 

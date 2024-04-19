@@ -9,6 +9,7 @@ func _physics_process(delta):
 		$Label.visible = true
 		Global.chickenSynelig = true
 		Global.objektiv_tagKylling = true
+		animation.play("slagter_idle")
 	else:
 		$Panel.visible = false
 		$Label.visible = false

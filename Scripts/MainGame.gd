@@ -8,13 +8,13 @@ var idkMan = true
 func _physics_process(delta):
 	if Global.objektiv_besoegSlagteren == true:
 		forkertMusik = true
-	
-	
+		
 	if Global.objektiv_tagBussen == true and rigtigMusik == true and forkertMusik == false:
 		$AudioStreamPlayer.play()
 		rigtigMusik = false
 	elif Global.objektiv_tagBussen == true and forkertMusik == true and idkMan == true:
 		$AudioStreamPlayer2.play()
+		$AudioStreamPlayer.stop()
 		idkMan = false
 
 

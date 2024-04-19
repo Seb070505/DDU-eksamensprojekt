@@ -14,6 +14,7 @@ var exitedHospital = Vector2(4075,0)
 var positionEfterHospital = true
 var positionHosSlagteren = false
 var fix = true
+var positionHus2 = false
 
 func _ready():
 	$SpriteSheet.visible = true
@@ -28,6 +29,12 @@ func _ready():
 	$Interact/tagElevatoren.visible = false
 	$Interact/snakMedDoktor.visible = false
 	$Interact/TagDinMedicin.visible = false
+	$Interact/TagElevatorenUd.visible = false
+	$Interact/BesoegSlagteren.visible = false
+	$Interact/SnakMedSlagteren.visible = false
+	$Interact/tagKylling.visible = false
+	$Interact/forladSlagteren.visible = false
+	$Interact/snakMedDatter2.visible = false
 	$Camera2D.current = true
 
 
@@ -43,6 +50,7 @@ func _physics_process(delta):
 	Hospital_Elevator()
 	Inventory()
 	forkertSted()
+	Hus2()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -187,7 +195,29 @@ func objective():
 		$Interact/snakMedDoktor.visible = false
 		$Interact/TagDinMedicin.visible = true
 	
+	if Global.objektiv_tagElevatorenUdAfHospitalet == true:
+		$Interact/TagDinMedicin.visible = false
+		$Interact/TagElevatorenUd.visible = true
 	
+	if Global.objektiv_besoegSlagteren == true:
+		$Interact/TagElevatorenUd.visible = false
+		$Interact/BesoegSlagteren.visible = true
+	
+	if Global.objektiv_snakMedSlagteren == true:
+		$Interact/BesoegSlagteren.visible = false
+		$Interact/SnakMedSlagteren.visible = true
+	
+	if Global.objektiv_tagKylling == true:
+		$Interact/SnakMedSlagteren.visible = false
+		$Interact/tagKylling.visible = true
+	
+	if Global.objektiv_forladButikken == true:
+		$Interact/tagKylling.visible = false
+		$Interact/forladSlagteren.visible = true
+	
+	if Global.objektiv_snakMedDatter == true:
+		$Interact/forladSlagteren.visible = false
+		$Interact/snakMedDatter2.visible = true
 	
 	
 	
@@ -255,3 +285,8 @@ func forkertSted():
 	if Global.objektiv_snakMedSlagteren == true and positionHosSlagteren == true:
 		position = Vector2(125,150)
 		positionHosSlagteren = false
+
+func Hus2():
+	if Global.chicken == 1 and positionHus2 == false:
+		position = Vector2(-1712,3155)
+		positionHus2 = true
