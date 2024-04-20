@@ -154,7 +154,8 @@ margin_bottom = -8.0
 rect_scale = Vector2( 0.5, 0.5 )
 text = "Far!!!
 Hvorfor har du købt kyllinge kød??
-Du skulle jo købe mælk, (Mangler mere dialog)."
+Du skulle jo købe mælk... Nå pynt med det.
+Skal vi ikke gå en tur? Har brug for noget frisk luft"
 align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
