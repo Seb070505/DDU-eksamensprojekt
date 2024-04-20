@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Modern_Exteriors_Complete_Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Room_Builder_free_16x16.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Room_Builder_16x16.png" type="Texture" id=6]
 [ext_resource path="res://Assets/The_Caretaker_-_Its_just_a_burning_memory_2016.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Datter_2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Hus2.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
@@ -5066,7 +5067,11 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 4/shapes = [  ]
 4/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=125]
+extents = Vector2( 19, 10 )
+
 [node name="Hus2" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 1
@@ -5112,6 +5117,12 @@ position = Vector2( -1823, 2913 )
 
 [node name="Player" parent="TileMap/TileMap" instance=ExtResource( 10 )]
 position = Vector2( -1712, 3149 )
+
+[node name="Area2D" type="Area2D" parent="TileMap/TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/TileMap/Area2D"]
+position = Vector2( -1712, 3177 )
+shape = SubResource( 125 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
