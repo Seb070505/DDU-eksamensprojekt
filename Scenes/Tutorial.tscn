@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -497.0
+margin_top = -147.0
+margin_right = 498.0
+margin_bottom = -124.0
+custom_fonts/font = SubResource( 1 )
+text = "For at bevæge dig skal du gøre brug af knapperne 'W', 'A', 'S' og 'D'.
+
+Der findes mange NPC'er i vores spil, det er således ikke alle man kan intagere med, 
+til nogle NPC'er skal man først have opfyldt nogle betingelser for at intagere med.
+Der vil derfor være et pop up hvis man kan intagere med en NPC.
+
+Da man ydermere kommer til at skulle samle pick ups op i løbet af spillet
+så kan man derfor tilgå sit inventory på knappen 'TAB'.
+
+Nogle Objectives kræver at man bevæger sig et stykke vej, og man kan derfor til
+disse objectives få et map op, der viser lokationen af objectivet. Dette map
+kan tilgåes på knappen 'M'.
+
+"
+align = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -175.0
+margin_top = -278.0
+margin_right = -87.0
+margin_bottom = -259.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 1, 0.796078, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Tutorial"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = -134.0
+margin_top = 197.0
+margin_right = 136.0
+margin_bottom = 254.0
+text = "Forsæt"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
