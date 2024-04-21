@@ -21,6 +21,7 @@ var chicken = 0
 var snakketMedDatter = false
 var underligVerden = false
 var brandStation = false
+var snakketMedBrandmand = false
 
 var objektiv_musikplade = false
 var objektiv_pladeAfspiller = false
@@ -40,3 +41,4 @@ var objektiv_snakMedDatter = false
 var objektiv_gaaUdAfHuset = false
 var objektiv_gaaIndModByen = false
 var objektiv_snakMedBrandmand = false
+var objektiv_snakMedDatter2 = false
