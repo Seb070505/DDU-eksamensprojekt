@@ -15,6 +15,7 @@ var positionEfterHospital = true
 var positionHosSlagteren = false
 var fix = true
 var positionHus2 = false
+var positionUnderigVerden = false
 
 func _ready():
 	$SpriteSheet.visible = true
@@ -35,6 +36,8 @@ func _ready():
 	$Interact/tagKylling.visible = false
 	$Interact/forladSlagteren.visible = false
 	$Interact/snakMedDatter2.visible = false
+	$Interact/gaaUdAfHuset.visible = false
+	$Interact/gaaIndModByen.visible = false
 	$Camera2D.current = true
 
 
@@ -51,6 +54,7 @@ func _physics_process(delta):
 	Inventory()
 	forkertSted()
 	Hus2()
+	underligVerden()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -93,6 +97,8 @@ func _physics_process(delta):
 			positionHosSlagteren = true
 		if Global.objektiv_snakMedDatter == true:
 			positionHus2 = true
+		if Global.objektiv_gaaIndModByen == true:
+			positionUnderigVerden = true
 		fix = false
 	
 	velocity = velocity.normalized()
@@ -221,6 +227,13 @@ func objective():
 		$Interact/forladSlagteren.visible = false
 		$Interact/snakMedDatter2.visible = true
 	
+	if Global.objektiv_gaaUdAfHuset == true:
+		$Interact/snakMedDatter2.visible = false
+		$Interact/gaaUdAfHuset.visible = true
+	
+	if Global.objektiv_gaaIndModByen == true:
+		$Interact/gaaUdAfHuset.visible = false
+		$Interact/gaaIndModByen.visible = true
 	
 	
 	
@@ -285,11 +298,16 @@ func Inventory():
 
 func forkertSted():
 	if Global.objektiv_snakMedSlagteren == true and positionHosSlagteren == true:
-		position = Vector2(125,150)
+		position = Vector2(125,140)
 		positionHosSlagteren = false
 
 func Hus2():
 	if Global.objektiv_snakMedDatter == true and positionHus2 == true:
-		position = Vector2(-1712,3155)
+		position = Vector2(-1712,3140)
 		positionHus2 = false
 		print("Position er Hus2")
+
+func underligVerden():
+	if Global.underligVerden == true and positionUnderigVerden == true:
+		position = Vector2(120,200)
+		positionUnderigVerden = false

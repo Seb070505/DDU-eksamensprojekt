@@ -5127,3 +5127,5 @@ shape = SubResource( 125 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+
+[connection signal="body_entered" from="TileMap/TileMap/Area2D" to="." method="_on_Area2D_body_entered"]

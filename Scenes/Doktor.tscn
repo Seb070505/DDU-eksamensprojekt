@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/doktor_mand.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 82.2192
+radius = 58.0086
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )

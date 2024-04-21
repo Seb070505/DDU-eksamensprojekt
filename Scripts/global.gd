@@ -19,6 +19,7 @@ var tilbageUdenforHospital = false
 var chickenSynelig = false
 var chicken = 0
 var snakketMedDatter = false
+var underligVerden = false
 
 var objektiv_musikplade = false
 var objektiv_pladeAfspiller = false
@@ -35,3 +36,5 @@ var objektiv_snakMedSlagteren = false
 var objektiv_tagKylling = false
 var objektiv_forladButikken = false
 var objektiv_snakMedDatter = false
+var objektiv_gaaUdAfHuset = false
+var objektiv_gaaIndModByen = false

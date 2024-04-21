@@ -8,6 +8,7 @@ func _physics_process(delta):
 		$Label.visible = true
 		Global.chicken = 0
 		Global.snakketMedDatter = true
+		Global.objektiv_gaaUdAfHuset = true
 		animation.play("datter_idle")
 	else:
 		$Panel.visible = false
