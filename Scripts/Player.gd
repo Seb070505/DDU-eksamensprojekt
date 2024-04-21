@@ -16,6 +16,7 @@ var positionHosSlagteren = false
 var fix = true
 var positionHus2 = false
 var positionUnderigVerden = false
+var positionBrandStation = false
 
 func _ready():
 	$SpriteSheet.visible = true
@@ -99,6 +100,8 @@ func _physics_process(delta):
 			positionHus2 = true
 		if Global.objektiv_gaaIndModByen == true:
 			positionUnderigVerden = true
+		if Global.objektiv_snakMedBrandmand == true:
+			positionBrandStation = true
 		fix = false
 	
 	velocity = velocity.normalized()
@@ -311,3 +314,8 @@ func underligVerden():
 	if Global.underligVerden == true and positionUnderigVerden == true:
 		position = Vector2(120,200)
 		positionUnderigVerden = false
+
+func brandstation():
+	if Global.brandStation == true and positionBrandStation == true:
+		position = Vector2(3950,-2125)
+		positionBrandStation = false
