@@ -37,10 +37,16 @@ func _ready():
 	$Interact/tagKylling.visible = false
 	$Interact/forladSlagteren.visible = false
 	$Interact/snakMedDatter2.visible = false
+	$Interact/Map.visible = false
+	#Interact/tagBussenMap.visible = false
 	$Interact/gaaUdAfHuset.visible = false
 	$Interact/gaaIndModByen.visible = false
 	$Interact/snakMedBrandmand.visible = false
 	$Interact/snakMedDatter3.visible = false
+	$Interact/Image.visible = false
+	$Interact/ImodByenMap.visible = false
+	$Interact/DoktorMap.visible = false
+	$Interact/ElevatorMap.visible = false
 	$Camera2D.current = true
 
 
@@ -48,7 +54,6 @@ func _ready():
 func _physics_process(delta):
 	var velocity = Vector2.ZERO * delta
 	
-	print(position)
 	
 	interact_and_pickUp()
 	objective()
@@ -59,6 +64,7 @@ func _physics_process(delta):
 	Hus2()
 	underligVerden()
 	brandstation()
+	map()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -330,3 +336,49 @@ func brandstation():
 	if Global.brandStation == true and positionBrandStation == true:
 		position = Vector2(3950,-2125)
 		positionBrandStation = false
+
+func map():
+	if Input.is_action_just_released("Map"):
+		$Interact/Map.visible = false
+		#$Interact/tagBussenMap.visible = false
+		$Interact/ElevatorMap.visible = false
+		$Interact/ImodByenMap.visible = false
+		$Interact/DoktorMap.visible = false
+		$Interact/Image.visible = false
+	
+	if Input.is_action_pressed("Map"):
+		#if Global.objektiv_tagBussen == true and Global.objektiv_tagElevatoren == false and Global.objektiv_snakMedDoktor == false and Global.objektiv_besoegSlagteren == false and Global.objektiv_gaaIndModByen == false:
+			#$Interact/Map.visible = true
+			#$Interact/tagBussenMap.visible = true
+			#$Interact/ElevatorMap.visible = false
+			#$Interact/ImodByenMap.visible = false
+			#$Interact/DoktorMap.visible = false
+			#$Interact/Image.visible = false
+		if Global.objektiv_tagBussen == true and Global.objektiv_tagElevatoren == true and Global.objektiv_snakMedDoktor == false and Global.objektiv_besoegSlagteren == false and Global.objektiv_gaaIndModByen == false:
+			$Interact/Map.visible = true
+			#$Interact/tagBussenMap.visible = false
+			$Interact/ElevatorMap.visible = true
+			$Interact/ImodByenMap.visible = false
+			$Interact/DoktorMap.visible = false
+			$Interact/Image.visible = false
+		if Global.objektiv_tagBussen == true and Global.objektiv_tagElevatoren == true and Global.objektiv_snakMedDoktor == true and Global.objektiv_besoegSlagteren == false and Global.objektiv_gaaIndModByen == false:
+			$Interact/Map.visible = true
+			#$Interact/tagBussenMap.visible = false
+			$Interact/ElevatorMap.visible = false
+			$Interact/ImodByenMap.visible = false
+			$Interact/DoktorMap.visible = true
+			$Interact/Image.visible = false
+		if Global.objektiv_tagBussen == true and Global.objektiv_tagElevatoren == true and Global.objektiv_snakMedDoktor == true and Global.objektiv_besoegSlagteren == true and Global.objektiv_gaaIndModByen == false:
+			$Interact/Map.visible = true
+			#$Interact/tagBussenMap.visible = false
+			$Interact/ElevatorMap.visible = false
+			$Interact/ImodByenMap.visible = false
+			$Interact/DoktorMap.visible = false
+			$Interact/Image.visible = true
+		if Global.objektiv_tagBussen == true and Global.objektiv_tagElevatoren == true and Global.objektiv_snakMedDoktor == true and Global.objektiv_besoegSlagteren == true and Global.objektiv_gaaIndModByen == true:
+			$Interact/Map.visible = true
+			#$Interact/tagBussenMap.visible = false
+			$Interact/ElevatorMap.visible = false
+			$Interact/ImodByenMap.visible = true
+			$Interact/DoktorMap.visible = false
+			$Interact/Image.visible = false

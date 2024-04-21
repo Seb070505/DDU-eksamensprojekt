@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprite_sheet.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Assets/Vinyl.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Chimken.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Dollar.png" type="Texture" id=7]
+[ext_resource path="res://Assets/image.png" type="Texture" id=8]
+[ext_resource path="res://Assets/ImodByen_map.png" type="Texture" id=9]
+[ext_resource path="res://Assets/doktor_map.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Elevator_map.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 5.0
@@ -1043,12 +1047,14 @@ text = "Snak med datteren"
 align = 1
 
 [node name="Inventory" type="Panel" parent="Interact"]
+visible = false
 margin_top = 56.0
 margin_right = 300.0
 margin_bottom = 257.0
 custom_styles/panel = SubResource( 26 )
 
 [node name="InventoryText" type="Label" parent="Interact"]
+visible = false
 margin_left = 84.0
 margin_top = 62.0
 margin_right = 172.0
@@ -1060,6 +1066,7 @@ text = "Inventory"
 align = 1
 
 [node name="Panel2" type="Panel" parent="Interact"]
+visible = false
 margin_left = 25.0
 margin_top = 105.0
 margin_right = 75.0
@@ -1067,6 +1074,7 @@ margin_bottom = 155.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Panel3" type="Panel" parent="Interact"]
+visible = false
 margin_left = 125.0
 margin_top = 105.0
 margin_right = 175.0
@@ -1074,6 +1082,7 @@ margin_bottom = 155.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Panel4" type="Panel" parent="Interact"]
+visible = false
 margin_left = 225.0
 margin_top = 105.0
 margin_right = 275.0
@@ -1081,6 +1090,7 @@ margin_bottom = 155.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Panel5" type="Panel" parent="Interact"]
+visible = false
 margin_left = 25.0
 margin_top = 180.0
 margin_right = 75.0
@@ -1088,6 +1098,7 @@ margin_bottom = 230.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Panel6" type="Panel" parent="Interact"]
+visible = false
 margin_left = 125.0
 margin_top = 180.0
 margin_right = 175.0
@@ -1095,6 +1106,7 @@ margin_bottom = 230.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Panel7" type="Panel" parent="Interact"]
+visible = false
 margin_left = 225.0
 margin_top = 180.0
 margin_right = 275.0
@@ -1102,24 +1114,55 @@ margin_bottom = 230.0
 custom_styles/panel = SubResource( 27 )
 
 [node name="Pills" type="Sprite" parent="Interact"]
+visible = false
 position = Vector2( 150, 129 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
 [node name="Vinyl" type="Sprite" parent="Interact"]
+visible = false
 position = Vector2( 50, 131 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
 
 [node name="Chimken" type="Sprite" parent="Interact"]
+visible = false
 position = Vector2( 50, 129 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
 [node name="Dollar" type="Sprite" parent="Interact"]
+visible = false
 position = Vector2( 50, 129 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
+
+[node name="Map" type="Panel" parent="Interact"]
+margin_left = 112.0
+margin_top = 48.0
+margin_right = 912.0
+margin_bottom = 548.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="Image" type="Sprite" parent="Interact"]
+position = Vector2( 512, 297 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 8 )
+
+[node name="ImodByenMap" type="Sprite" parent="Interact"]
+position = Vector2( 512, 288 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 9 )
+
+[node name="DoktorMap" type="Sprite" parent="Interact"]
+position = Vector2( 512, 288 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 10 )
+
+[node name="ElevatorMap" type="Sprite" parent="Interact"]
+position = Vector2( 512, 288 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
