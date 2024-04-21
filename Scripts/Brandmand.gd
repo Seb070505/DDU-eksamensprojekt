@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var animation = $AnimationPlayer
 
 func _physics_process(delta):
-	if Global.interact == true:
+	if Global.interact == true and Global.objektiv_snakMedBrandmand == true and Global.snakketMedDatter2 == false:
 		$Panel.visible = true
 		$Label.visible = true
 		Global.snakketMedBrandmand = true

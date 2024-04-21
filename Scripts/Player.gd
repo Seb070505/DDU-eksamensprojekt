@@ -39,6 +39,8 @@ func _ready():
 	$Interact/snakMedDatter2.visible = false
 	$Interact/gaaUdAfHuset.visible = false
 	$Interact/gaaIndModByen.visible = false
+	$Interact/snakMedBrandmand.visible = false
+	$Interact/snakMedDatter3.visible = false
 	$Camera2D.current = true
 
 
@@ -56,6 +58,7 @@ func _physics_process(delta):
 	forkertSted()
 	Hus2()
 	underligVerden()
+	brandstation()
 	
 	if Input.is_action_pressed("move_up") and pickUp_ip == false:
 		velocity.y -= 1
@@ -237,6 +240,14 @@ func objective():
 	if Global.objektiv_gaaIndModByen == true:
 		$Interact/gaaUdAfHuset.visible = false
 		$Interact/gaaIndModByen.visible = true
+	
+	if Global.objektiv_snakMedBrandmand == true:
+		$Interact/gaaIndModByen.visible = false
+		$Interact/snakMedBrandmand.visible = true
+	
+	if Global.objektiv_snakMedDatter2 == true:
+		$Interact/snakMedBrandmand.visible = false
+		$Interact/snakMedDatter3.visible = true
 	
 	
 	

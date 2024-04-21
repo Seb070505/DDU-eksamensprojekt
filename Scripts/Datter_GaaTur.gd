@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var animation = $AnimationPlayer
 
 var player = null
-var speed = 40
+var speed = 48
 var motion = Vector2.ZERO
 var stop_motion = false
 

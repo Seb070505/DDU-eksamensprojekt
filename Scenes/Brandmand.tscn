@@ -156,11 +156,12 @@ custom_styles/panel = SubResource( 3 )
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = -80.0
-margin_top = -73.0
+margin_top = -76.0
 margin_right = 242.0
-margin_bottom = -8.0
+margin_bottom = 6.0
 rect_scale = Vector2( 0.5, 0.5 )
 text = "Hej Hr Kenneth,
+Vi fandt dig forvirret ude på gaden.
 Hvis du bare venter her, så kommer din datter
 og henter dig lige om lidt, vi har allerede ringet
 til hende."
