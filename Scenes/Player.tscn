@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprite_sheet.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/ImodByen_map.png" type="Texture" id=9]
 [ext_resource path="res://Assets/doktor_map.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Elevator_map.png" type="Texture" id=11]
+[ext_resource path="res://Assets/tagBussenMap.png" type="Texture" id=12]
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 5.0
@@ -1162,6 +1163,11 @@ texture = ExtResource( 10 )
 position = Vector2( 512, 288 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 11 )
+
+[node name="TagBussenMap" type="Sprite" parent="Interact"]
+position = Vector2( 511, 301 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
