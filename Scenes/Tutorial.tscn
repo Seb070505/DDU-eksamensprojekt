@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=2]
@@ -11,6 +11,11 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -44,10 +49,10 @@ kan tilgåes på knappen 'M'.
 align = 1
 
 [node name="Label2" type="Label" parent="."]
-margin_left = -175.0
-margin_top = -278.0
-margin_right = -87.0
-margin_bottom = -259.0
+margin_left = -176.0
+margin_top = -246.0
+margin_right = -88.0
+margin_bottom = -227.0
 rect_scale = Vector2( 4, 4 )
 custom_colors/font_color = Color( 1, 0.796078, 0, 1 )
 custom_fonts/font = SubResource( 2 )
@@ -60,5 +65,22 @@ margin_top = 197.0
 margin_right = 136.0
 margin_bottom = 254.0
 text = "Forsæt"
+
+[node name="Save_File_text" type="Label" parent="."]
+margin_left = 162.0
+margin_top = -282.0
+margin_right = 508.0
+margin_bottom = -263.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+
+[node name="Save_File_text2" type="Label" parent="."]
+margin_left = 3.0
+margin_top = -282.0
+margin_right = 388.0
+margin_bottom = -263.0
+custom_fonts/font = SubResource( 3 )
+text = "Du nåede sidst til objective"
+align = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

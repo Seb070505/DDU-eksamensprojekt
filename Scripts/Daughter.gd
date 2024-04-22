@@ -10,7 +10,7 @@ func _physics_process(delta):
 		$Label.visible = true
 		Global.mulighedForAtTageBussen = true
 		animation.play("Daughter idle")
-		Global.objektiv_tagBussen = true
+		Global.objektiv_gaaUdafHoveddoeren = true
 		Global.penge = 50
 	else:
 		$Panel.visible = false

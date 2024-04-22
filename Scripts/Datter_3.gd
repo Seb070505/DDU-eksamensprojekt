@@ -44,4 +44,5 @@ func _on_Area2D_body_exited(body):
 
 
 func _on_Timer_timeout():
+	Global.spilSlut = true
 	get_tree().change_scene("res://Scenes/Endscene.tscn")

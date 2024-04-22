@@ -896,14 +896,23 @@ custom_fonts/font = SubResource( 22 )
 text = "Snak med datteren i køkkenet"
 align = 1
 
+[node name="gaaUdafHoveddoeren" type="Label" parent="Interact"]
+margin_left = 847.0
+margin_top = 37.0
+margin_right = 1029.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 23 )
+text = "Gå ud af hoveddøren"
+align = 1
+
 [node name="TagBussen" type="Label" parent="Interact"]
 margin_left = 847.0
 margin_top = 37.0
 margin_right = 1029.0
 margin_bottom = 68.0
 custom_fonts/font = SubResource( 23 )
-text = "Gå ud af hoveddøren, og tag 
-bussen ved busstopstedet"
+text = "Tag bussen ved 
+busstopstedet"
 align = 1
 
 [node name="gaaIndPaaHospitalet" type="Label" parent="Interact"]

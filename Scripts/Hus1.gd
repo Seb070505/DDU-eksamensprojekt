@@ -19,6 +19,7 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.has_method("player") and Global.mulighedForAtTageBussen == true:
 		get_tree().change_scene("res://Scenes/MainGame.tscn")
+		Global.objektiv_tagBussen = true
 
 
 func _on_First_Objective_body_entered(body):

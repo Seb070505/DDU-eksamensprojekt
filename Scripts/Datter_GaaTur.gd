@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var animation = $AnimationPlayer
 
 var player = null
-var speed = 45
+var speed = 40
 var motion = Vector2.ZERO
 var stop_motion = false
 
@@ -41,4 +41,5 @@ func _on_Area2D2_body_entered(body):
 
 
 func _on_Area2D2_body_exited(body):
-	stop_motion = false
+	if body.has_method("player"):
+		stop_motion = false

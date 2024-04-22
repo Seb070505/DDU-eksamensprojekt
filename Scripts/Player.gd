@@ -25,6 +25,7 @@ func _ready():
 	$Interact/Musikplade.visible = false
 	$Interact/MusikAfspiller.visible = false
 	$Interact/SnakMedDatter.visible = false
+	$Interact/gaaUdafHoveddoeren.visible = false
 	$Interact/TagBussen.visible = false
 	$Interact/gaaIndPaaHospitalet.visible = false
 	$Interact/snakMedReceptionisten.visible = false
@@ -191,8 +192,12 @@ func objective():
 		$Interact/MusikAfspiller.visible = false
 		$Interact/SnakMedDatter.visible = true
 	
-	if Global.objektiv_tagBussen == true:
+	if Global.objektiv_gaaUdafHoveddoeren == true:
 		$Interact/SnakMedDatter.visible = false
+		$Interact/gaaUdafHoveddoeren.visible = true
+	
+	if Global.objektiv_tagBussen == true:
+		$Interact/gaaUdafHoveddoeren.visible = false
 		$Interact/TagBussen.visible = true
 	
 	if Global.objektiv_gaaIndPaaHospitalet == true:
