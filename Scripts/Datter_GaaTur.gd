@@ -14,7 +14,6 @@ func _physics_process(delta):
 		if stop_motion == false:
 			motion = position.direction_to(player.position) * speed
 	
-	motion = move_and_slide(motion)
 	
 	if motion.x == 0 and motion.y == 0:
 		animation.play("idle")
@@ -24,6 +23,8 @@ func _physics_process(delta):
 	
 	if motion.x < 0:
 		animation.play("walking_left")
+	
+	motion = move_and_slide(motion)
 
 
 func _on_Area2D_body_entered(body):
@@ -40,6 +41,8 @@ func _on_Area2D2_body_entered(body):
 		stop_motion = true
 
 
+
 func _on_Area2D2_body_exited(body):
 	if body.has_method("player"):
 		stop_motion = false
+

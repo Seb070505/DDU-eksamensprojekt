@@ -1498,6 +1498,9 @@ tile_data = PoolIntArray( -131029, 0, 0, -131010, 0, 0, -130970, 1, 0, -130949, 
 position = Vector2( 1613, 1551 )
 scale = Vector2( 0.5, 0.5 )
 
+[node name="Doktor" parent="TileMap/TileMap2" instance=ExtResource( 9 )]
+position = Vector2( 1617, 1512 )
+
 [node name="Player" parent="TileMap/TileMap2" instance=ExtResource( 6 )]
 position = Vector2( 843, 478 )
 
@@ -1506,9 +1509,6 @@ position = Vector2( 843, 478 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator"]
 position = Vector2( 1328, -12 )
 shape = SubResource( 4 )
-
-[node name="Doktor" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1617, 1512 )
 
 [node name="Elevator2" type="Area2D" parent="."]
 
