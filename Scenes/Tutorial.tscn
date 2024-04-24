@@ -34,7 +34,7 @@ margin_bottom = -124.0
 custom_fonts/font = SubResource( 1 )
 text = "For at bevæge dig skal du gøre brug af knapperne 'W', 'A', 'S' og 'D'.
 
-Der findes mange NPC'er i vores spil, det er således ikke alle man kan intagere med, 
+Der findes mange NPC'er i vores spil, det er således ikke alle man kan interagere med, 
 til nogle NPC'er skal man først have opfyldt nogle betingelser for at intagere med.
 Der vil derfor være et pop up hvis man kan intagere med en NPC.
 
